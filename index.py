@@ -8,6 +8,7 @@ import streamlit as st
 import pickle
 import nltk
 
+st.set_page_config(page_title='MOVIE GENRE CLASSIFICATION', layout = 'wide', page_icon = 'movie.png', initial_sidebar_state = 'auto')
 @st.cache_data
 def download_nltk_data():
     nltk.download('stopwords')
@@ -17,7 +18,6 @@ download_nltk_data()
 
 ps= PorterStemmer()
 
-st.set_page_config(page_title='MOVIE GENRE CLASSIFICATION', layout = 'wide', page_icon = 'movie.png', initial_sidebar_state = 'auto')
 
 def remove_whitespace(text):
     return text.str.strip()
