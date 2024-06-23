@@ -5,7 +5,7 @@ from scipy.sparse import csr_matrix
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import streamlit as st
-import dill
+import pickle
 ps= PorterStemmer()
 
 st.set_page_config(page_title='MOVIE GENRE CLASSIFICATION', layout = 'wide', page_icon = 'movie.png', initial_sidebar_state = 'auto')
@@ -34,7 +34,7 @@ def sparse_to_csr(sparse_matrix):
         return sparse_matrix
     return csr_matrix(sparse_matrix)
 
-pipe =dill.load(open(r"pipe1.pkl","rb"))
+pipe =pickle.load(open(r"pipe.pkl","rb"))
 
 st.header("Predict  The Genre Of A Movie",divider="rainbow")
 
