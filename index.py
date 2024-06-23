@@ -34,7 +34,7 @@ def sparse_to_csr(sparse_matrix):
         return sparse_matrix
     return csr_matrix(sparse_matrix)
 
-pipe =pickle.load(open(r"pipe.pkl","rb"))
+pipe =pickle.load(open("pipe.pkl","rb"))
 
 st.header("Predict  The Genre Of A Movie",divider="rainbow")
 
