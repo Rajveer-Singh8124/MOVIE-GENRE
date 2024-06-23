@@ -2,12 +2,19 @@ import pickle
 import numpy as np
 import pandas as pd
 from scipy.sparse import csr_matrix
-
-nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import streamlit as st
 import pickle
+import nltk
+
+@st.cache_data
+def download_nltk_data():
+    nltk.download('stopwords')
+    print("NLTK stopwords downloaded successfully.")
+
+download_nltk_data()
+
 ps= PorterStemmer()
 
 st.set_page_config(page_title='MOVIE GENRE CLASSIFICATION', layout = 'wide', page_icon = 'movie.png', initial_sidebar_state = 'auto')
