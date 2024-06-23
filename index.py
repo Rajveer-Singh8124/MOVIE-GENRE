@@ -2,6 +2,8 @@ import pickle
 import numpy as np
 import pandas as pd
 from scipy.sparse import csr_matrix
+
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import streamlit as st
